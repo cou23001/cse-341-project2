@@ -1,0 +1,30 @@
+[
+    {
+        "_id": {"$oid":"6483ce023f46080356e0c6d5"},
+        "email": "juan@test.com",
+        "username": "juan@test.com",
+        "name": "Juan",
+        "ipaddress": "94.121.163.63"
+    },
+    {
+        "_id": {"$oid":"6483ce023f46080356e0c6d6"},
+        "email": "peter@test.com",
+        "username": "peter@test.com",
+        "name": "Peter",
+        "ipaddress": "94.121.163.64"
+    },
+    {
+        "_id": {"$oid":"6483ce023f46080356e0c6d7"},
+        "email": "luis@test.com",
+        "username": "luis@test.com",
+        "name": "Luis",
+        "ipaddress": "94.121.163.65"
+    },
+    {
+        "_id": {"$oid":"6483ce023f46080356e0c6d8"},
+        "email": "pablo@test.com",
+        "username": "pablo@test.com",
+        "name": "Pablo",
+        "ipaddress": "94.121.163.66"
+    }
+]

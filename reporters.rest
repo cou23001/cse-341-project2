@@ -1,0 +1,39 @@
+### GET Request to Retrieve Contact Information
+GET http://localhost:3000/reporters/
+APIKEY: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+### GET Request to Retrieve Contact Information
+GET http://localhost:3000/reporters/5fbbc1de5aa0b68815b5d0cf
+APIKEY: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+### Save a Reporter 
+POST http://localhost:3000/reporters HTTP/1.1
+APIKEY: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+content-type: application/json
+
+{
+    "firstName": "Peter",
+    "lastName": "Pumpkin",
+    "age": 25,
+    "email": "ppumpkin@example.com",
+    "city": "Monterrey",
+    "country": "Mexico",
+    "isActive": true
+}
+
+### Update a User 
+PUT http://localhost:3000/users/65b161a9bfc61d0d10b9b69d HTTP/1.1
+APIKEY: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+content-type: application/json
+
+{
+    "email": "brenditak@test.com",
+    "username": "brenditak@test.com",
+    "name": "Brenda Q",
+    "ipaddress": "91.221.163.68"
+}
+
+### Delete a User 
+DELETE http://localhost:3000/users/65b161a9bfc61d0d10b9b68d HTTP/1.1
+APIKEY: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
