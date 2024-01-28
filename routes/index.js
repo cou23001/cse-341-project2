@@ -5,7 +5,7 @@ const reporter = require('./reporter');
 routes.use('/', require('./swagger'))
 
 routes.get('/', (req,res) => {
-    //#swagger.tags=['Hello World']
+    //#swagger.tags=['Hello World - Project 2']
     res.send("Hello Project 2!");
 });
 
