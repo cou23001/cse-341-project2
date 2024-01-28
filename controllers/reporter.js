@@ -72,32 +72,34 @@ exports.getSingle = (req, res) => {
 };
 
 // Create a Reporter
-exports.createUser = (req, res) => {
-  //#swagger.tags=['Users']
+exports.createReporter = (req, res) => {
+  //#swagger.tags=['Reporters']
   //#swagger.description= apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
   if (req.header('apiKey') === apiKey) {
     // Validate request
-    if (!req.body.name) {
+    if (!req.body.firstName) {
       res.status(400).send({ message: 'Content can not be empty!' });
       return;
     }
-
-    const user = new User({
+    const reporter = new Reporter({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      age: req.body.age,
       email: req.body.email,
-      username: req.body.username,
-      name: req.body.name,
-      ipaddress: req.body.ipaddress,
+      city: req.body.city,
+      country: req.body.country,
+      isActive: req.body.isActive,
     });
-    // Save User in the database
-    user
-      .save(user)
+    // Save Reporter in the database
+    reporter
+      .save(reporter)
       .then((data) => {
         res.send(data);
       })
       .catch((err) => {
         res.status(500).send({
           message:
-            err.message || 'Some error occurred while creating the User.',
+            err.message || 'Some error occurred while creating the Reporter.',
         });
       });
   
@@ -107,10 +109,10 @@ exports.createUser = (req, res) => {
   }
 };
 
-/*
-// Update a User
-exports.updateUser = (req, res) => {
-  //#swagger.tags=['Users']
+
+// Update a Reporter
+exports.updateReporter = (req, res) => {
+  //#swagger.tags=['Reporter']
   //#swagger.description= apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
   if (req.header('apiKey') === apiKey) {
     
@@ -120,24 +122,27 @@ exports.updateUser = (req, res) => {
     const userId = new ObjectId(req.params.id);
 
     const updatedFields = {
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      age: req.body.age,
       email: req.body.email,
-      username: req.body.username,
-      name: req.body.name,
-      ipaddress: req.body.ipaddress,
+      city: req.body.city,
+      country: req.body.country,
+      isActive: req.body.isActive,
     };
     
     // Update the user by finding it based on a unique identifier (e.g., user ID)
-    User.updateOne({ _id: userId }, { $set: updatedFields })
+    Reporter.updateOne({ _id: userId }, { $set: updatedFields })
       .then((result) => {
         if (result.acknowledged) {
-          res.send({ message: 'User updated successfully' });
+          res.send({ message: 'Reporter updated successfully' });
         } else {
-          res.status(404).send({ message: 'User not found or no changes made' });
+          res.status(404).send({ message: 'Reporter not found or no changes made' });
         }
       })
       .catch((err) => {
         res.status(500).send({
-          message: err.message || 'Some error occurred while updating the User.',
+          message: err.message || 'Some error occurred while updating the Reporter.',
         });
       });
   } else {
@@ -145,9 +150,9 @@ exports.updateUser = (req, res) => {
   }
 };
 
-// Delete a User
-exports.deleteUser = (req, res) => {
-  //#swagger.tags=['Users']
+// Delete a Reporter
+exports.deleteReporter = (req, res) => {
+  //#swagger.tags=['Reporter']
   //#swagger.description= apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
   if (req.header('apiKey') === apiKey) {
 
@@ -157,22 +162,21 @@ exports.deleteUser = (req, res) => {
 
     const userId = new ObjectId(req.params.id);
 
-    // Delete the user by finding it based on a unique identifier (e.g., user ID)
-    User.deleteOne({ _id: userId })
+    // Delete the reporter by finding it based on a unique identifier (e.g., user ID)
+    Reporter.deleteOne({ _id: userId })
       .then((result) => {
         if (result.deletedCount > 0) {
-          res.send({ message: 'User deleted successfully' });
+          res.send({ message: 'Reporter deleted successfully' });
         } else {
-          res.status(404).send({ message: 'User not found or no changes made' });
+          res.status(404).send({ message: 'Reporter not found or no changes made' });
         }
       })
       .catch((err) => {
         res.status(500).send({
-          message: err.message || 'Some error occurred while deleting the User.',
+          message: err.message || 'Some error occurred while deleting the Reporter.',
         });
       });
   } else {
     res.send('Invalid apiKey, please read the documentation.');
   }
 };
-*/

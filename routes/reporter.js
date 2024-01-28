@@ -8,11 +8,10 @@ router.get('/', reporters.getAll);
 
 router.get('/:id', reporters.getSingle);
 
-router.post('/', validation.saveReporter, reporters.createUser);
-/*
-router.put('/:id', validation.saveUser, reporters.updateUser);
+router.post('/', validation.saveReporter, reporters.createReporter);
 
-router.delete('/:id', reporters.deleteUser);
-*/
+router.put('/:id', validation.saveReporter, reporters.updateReporter);
+
+router.delete('/:id', reporters.deleteReporter);
 
 module.exports = router;

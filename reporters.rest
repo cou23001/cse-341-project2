@@ -21,19 +21,22 @@ content-type: application/json
     "isActive": true
 }
 
-### Update a User 
-PUT http://localhost:3000/users/65b161a9bfc61d0d10b9b69d HTTP/1.1
+### Update a Reporter 
+PUT http://localhost:3000/reporters/65b5bd8d69473a3cc9b10343 HTTP/1.1
 APIKEY: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 content-type: application/json
 
 {
-    "email": "brenditak@test.com",
-    "username": "brenditak@test.com",
-    "name": "Brenda Q",
-    "ipaddress": "91.221.163.68"
+    "firstName": "Peter",
+    "lastName": "Pumpkin Head",
+    "age": 25,
+    "email": "peter@example.com",
+    "city": "Monterrey",
+    "country": "Mexico",
+    "isActive": true
 }
 
 ### Delete a User 
-DELETE http://localhost:3000/users/65b161a9bfc61d0d10b9b68d HTTP/1.1
+DELETE http://localhost:3000/reporters/65b5bd8d69473a3cc9b10343 HTTP/1.1
 APIKEY: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
