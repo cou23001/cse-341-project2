@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Users API",
-    "description": "Users API",
+    "title": "Users & Reporters API",
+    "description": "Users & Reporters API",
     "version": "1.0.0"
   },
   "host": "project2-ljbc.onrender.com",
