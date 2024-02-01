@@ -2,16 +2,18 @@ const express = require('express');
 const router = express.Router();
 
 const reporters = require('../controllers/reporter');
-const validation = require('../middleware/validate');
+// const validation = require('../middleware/validate');
+
+const { isAuthenticated } = require('../middleware/authenticate');
 
 router.get('/', reporters.getAll);
 
 router.get('/:id', reporters.getSingle);
 
-router.post('/', validation.saveReporter, reporters.createReporter);
+router.post('/', isAuthenticated, reporters.createReporter);
 
-router.put('/:id', validation.saveReporter, reporters.updateReporter);
+router.put('/:id', isAuthenticated, reporters.updateReporter);
 
-router.delete('/:id', reporters.deleteReporter);
+router.delete('/:id', isAuthenticated, reporters.deleteReporter);
 
 module.exports = router;
