@@ -1,6 +1,8 @@
 const routes = require('express').Router();
-const user = require('./user');
-const reporter = require('./reporter');
+//const user = require('./user');
+const book = require('./book');
+//const reporter = require('./reporter');
+const author = require('./author');
 const passport = require('passport');
 
 routes.use('/', require('./swagger'))
@@ -10,8 +12,8 @@ routes.use('/', require('./swagger'))
 //    res.send("Hello Project 2!");
 //});
 
-routes.use('/users', user);
-routes.use('/reporters', reporter);
+routes.use('/books', book);
+routes.use('/authors', author);
 
 // Login with GitHub
 routes.get("/login", passport.authenticate("github"), (req, res) => {});

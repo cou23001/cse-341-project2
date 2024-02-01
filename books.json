@@ -1,0 +1,23 @@
+[
+    {
+      "_id": {"$oid": "5fbbc1de5aa0b68815b5d0d0"},
+      "title": "Book 1",
+      "authorId": {"$oid":"5fbbc1de5aa0b68815b5d0cf"},
+      "genre": "Fiction",
+      "year": 2022
+    },
+    {
+      "_id": {"$oid": "65bbfd63a1079eea36c3838d"},
+      "title": "Book 2",
+      "authorId": {"$oid":"5fbbc1de5aa0b68815b5d0d0"},
+      "genre": "Mystery",
+      "year": 2021
+    },
+    {
+      "_id": {"$oid": "65bbfd63a1079eea36c3838e"},
+      "title": "Book 3",
+      "authorId": {"$oid":"5fbbc1de5aa0b68815b5d0d1"},
+      "genre": "Science Fiction",
+      "year": 2020
+    }
+]

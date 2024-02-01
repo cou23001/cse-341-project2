@@ -12,15 +12,22 @@
     "https"
   ],
   "paths": {
-    "/": {
+    "/login": {
       "get": {
-        "tags": [
-          "Hello World - Project 2"
-        ],
         "description": "",
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/logout": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
           }
         }
       }
@@ -35,10 +42,10 @@
         }
       }
     },
-    "/users/": {
+    "/books/": {
       "get": {
         "tags": [
-          "Users"
+          "Books"
         ],
         "description": "apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N",
         "parameters": [
@@ -59,7 +66,7 @@
       },
       "post": {
         "tags": [
-          "Users"
+          "Books"
         ],
         "description": "apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N",
         "parameters": [
@@ -77,13 +84,16 @@
                 "name": {
                   "example": "any"
                 },
-                "email": {
+                "title": {
                   "example": "any"
                 },
-                "username": {
+                "authorid": {
                   "example": "any"
                 },
-                "ipaddress": {
+                "genre": {
+                  "example": "any"
+                },
+                "year": {
                   "example": "any"
                 }
               }
@@ -106,10 +116,10 @@
         }
       }
     },
-    "/users/{id}": {
+    "/books/{id}": {
       "get": {
         "tags": [
-          "Users"
+          "Books"
         ],
         "description": "apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N",
         "parameters": [
@@ -142,7 +152,7 @@
       },
       "put": {
         "tags": [
-          "Users"
+          "Books"
         ],
         "description": "apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N",
         "parameters": [
@@ -163,16 +173,16 @@
             "schema": {
               "type": "object",
               "properties": {
-                "email": {
+                "title": {
                   "example": "any"
                 },
-                "username": {
+                "authorid": {
                   "example": "any"
                 },
-                "name": {
+                "genre": {
                   "example": "any"
                 },
-                "ipaddress": {
+                "year": {
                   "example": "any"
                 }
               }
@@ -199,7 +209,7 @@
       },
       "delete": {
         "tags": [
-          "Users"
+          "Books"
         ],
         "description": "apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N",
         "parameters": [
@@ -231,10 +241,10 @@
         }
       }
     },
-    "/reporters/": {
+    "/authors/": {
       "get": {
         "tags": [
-          "Reporters"
+          "Authors"
         ],
         "description": "apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N",
         "parameters": [
@@ -255,7 +265,7 @@
       },
       "post": {
         "tags": [
-          "Reporters"
+          "Authors"
         ],
         "description": "apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N",
         "parameters": [
@@ -302,8 +312,8 @@
           "400": {
             "description": "Bad Request"
           },
-          "412": {
-            "description": "Precondition Failed"
+          "401": {
+            "description": "Unauthorized"
           },
           "500": {
             "description": "Internal Server Error"
@@ -311,10 +321,10 @@
         }
       }
     },
-    "/reporters/{id}": {
+    "/authors/{id}": {
       "get": {
         "tags": [
-          "Reporters"
+          "Authors"
         ],
         "description": "apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N",
         "parameters": [
@@ -347,7 +357,7 @@
       },
       "put": {
         "tags": [
-          "Reporters"
+          "Authors"
         ],
         "description": "apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N",
         "parameters": [
@@ -400,11 +410,11 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "404": {
             "description": "Not Found"
-          },
-          "412": {
-            "description": "Precondition Failed"
           },
           "500": {
             "description": "Internal Server Error"
@@ -413,7 +423,7 @@
       },
       "delete": {
         "tags": [
-          "Reporters"
+          "Authors"
         ],
         "description": "apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N",
         "parameters": [
@@ -435,6 +445,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
           },
           "404": {
             "description": "Not Found"
