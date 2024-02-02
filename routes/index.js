@@ -1,8 +1,6 @@
 const routes = require('express').Router();
 const user = require('./user');
 const book = require('./book');
-const registrationRoute = require('./registration');
-//const reporter = require('./reporter');
 const author = require('./author');
 const passport = require('passport');
 
