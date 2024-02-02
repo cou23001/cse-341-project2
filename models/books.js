@@ -8,7 +8,7 @@ module.exports = (mongoose) => {
           title: String,
           authorId: ObjectId,
           genre: String,
-          year: String,
+          year: String
         },
         { timestamps: true }
       )

@@ -3,12 +3,14 @@ module.exports = (mongoose) => {
       'users',
       mongoose.Schema(
         {
+          email: String,
           username: String,
-          password: String,
-          name: String
+          name: String,
+          ipaddress: String,
         },
         { timestamps: true }
       )
     );
+  
     return User;
   };

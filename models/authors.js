@@ -1,5 +1,3 @@
-const { Int32 } = require("mongodb");
-
 module.exports = (mongoose) => {
     const Author = mongoose.model(
       'authors',
@@ -16,6 +14,5 @@ module.exports = (mongoose) => {
         { timestamps: true }
       )
     );
-  
     return Author;
   };

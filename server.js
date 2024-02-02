@@ -38,15 +38,16 @@ app
   .use(cors({ origin: "*" }))
   .use("/", require("./routes/index"));
 
-  passport.use(new GitHubStrategy({
-    clientID: process.env.GITHUB_CLIENT_ID,
-    clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: process.env.CALLBACK_URL,
-  },
-  function (accessToken, refreshToken, profile, done) {
-    return done(null,profile);
-  }
-));
+passport.use(new GitHubStrategy({
+      clientID: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+      callbackURL: process.env.CALLBACK_URL,
+    },
+    function (accessToken, refreshToken, profile, done) {
+      return done(null,profile);
+    }
+  )
+);
 
 passport.serializeUser((user, done) => {
   done(null, user);
@@ -64,14 +65,6 @@ app.get('/github/callback', passport.authenticate('github',{
     req.session.user = req.user;
     res.redirect('/');
 });
-
-/*
-app
-  .use(cors())
-  .use(express.json())
-  .use(express.urlencoded({ extended: true }))
-  .use('/', routes);
-  */
 
 const db = require('./models');
 

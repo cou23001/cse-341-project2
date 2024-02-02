@@ -1,6 +1,7 @@
 const routes = require('express').Router();
-//const user = require('./user');
+const user = require('./user');
 const book = require('./book');
+const registrationRoute = require('./registration');
 //const reporter = require('./reporter');
 const author = require('./author');
 const passport = require('passport');
@@ -14,6 +15,9 @@ routes.use('/', require('./swagger'))
 
 routes.use('/books', book);
 routes.use('/authors', author);
+
+// Use the registration route
+routes.use('/users', user);
 
 // Login with GitHub
 routes.get("/login", passport.authenticate("github"), (req, res) => {});
