@@ -63,5 +63,6 @@ const saveAuthor = (req,res,next) => {
 
 module.exports = {
     saveUser,
-    saveAuthor
+    saveAuthor,
+    saveBook
 };

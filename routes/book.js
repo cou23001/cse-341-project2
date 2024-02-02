@@ -11,9 +11,9 @@ router.get('/', books.getAll);
 
 router.get('/:id', books.getSingle);
 
-router.post('/', isAuthenticated, books.createBook);
+router.post('/', isAuthenticated, validation.saveBook, books.createBook);
 
-router.put('/:id', isAuthenticated, books.updateBook);
+router.put('/:id', isAuthenticated, validation.saveBook, books.updateBook);
 
 router.delete('/:id', isAuthenticated, books.deleteBook);
 

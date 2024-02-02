@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const authors = require('../controllers/author');
-// const validation = require('../middleware/validate');
+const validation = require('../middleware/validate');
 
 const { isAuthenticated } = require('../middleware/authenticate');
 
@@ -10,9 +10,9 @@ router.get('/', authors.getAll);
 
 router.get('/:id', authors.getSingle);
 
-router.post('/', isAuthenticated, authors.createAuthor);
+router.post('/', isAuthenticated, validation.saveAuthor, authors.createAuthor);
 
-router.put('/:id', isAuthenticated, authors.updateAuthor);
+router.put('/:id', isAuthenticated, validation.saveAuthor, authors.updateAuthor);
 
 router.delete('/:id', isAuthenticated, authors.deleteAuthor);
 
